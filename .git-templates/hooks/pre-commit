@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Set the maximum file size limit (in bytes)
+max_size=2097152 # 1MB
+
+# Check each file in the commit
+for file in $(git diff --cached --name-only)
+do
+  size=$(git cat-file -s ":$file")
+  if [ $size -gt $max_size ]; then
+    echo "Error: $file is larger than 2MB. Please use Git LFS for large files."
+    exit 1
+  fi
+done
+
+#golangci-lint run --new-from-rev=origin/master
