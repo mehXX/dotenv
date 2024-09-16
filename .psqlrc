@@ -35,23 +35,16 @@
 \set extensions 'SELECT extname, extversion FROM pg_extension;'
 
 \echo '--- Size of Tables and Database ---'
-
 \echo ' '
-
 \echo '+-----------------------+------------------------------------------------------------------+'
 \echo '| Query Name            | Explanation                                                      |'
 \echo '+-----------------------+------------------------------------------------------------------+'
 \echo '| average_row_size_stats| Calculates the average row size for each table in the database   |'
 \echo '| db_size               | Retrieves the size of each database in a human-readable format   |'
 \echo '+-----------------------+------------------------------------------------------------------+'
-
 \echo ' '
-
 \echo '--- Performance Check (Indexes, Dead Tuples) ---'
-
 \echo ' '
-
-
 \echo '+-----------------------+------------------------------------------------------------------+'
 \echo '| unused_indexes        | Identifies indexes that are rarely or never used                 |'
 \echo '| index_bloat           | Detects bloat in indexes, indicating wasted space                |'
@@ -60,30 +53,22 @@
 \echo '| seq_scans_stats       | Shows the number of sequential scans versus index scans          |'
 \echo '| toast_stats           | Provides statistics about TOAST tables (used for large objects)  |'
 \echo '+-----------------------+------------------------------------------------------------------+'
-
 \echo ' '
-
 \echo '--- Runtime Statistics for Queries ---'
-
 \echo ' '
-
 \echo '+-----------------------+------------------------------------------------------------------+'
 \echo '| waiting_queries       | Lists queries that are currently waiting on an event             |'
 \echo '| find_deadlocks        | Detects potential deadlocks within the database                  |'
 \echo '| active_queries        | Displays currently active (non-idle) queries                     |'
 \echo '| oldest_transactions   | Shows the oldest transactions running in the database            |'
 \echo '+-----------------------+------------------------------------------------------------------+'
-
 \echo ' '
-
 \echo '--- Settings, Connection Count, Extensions ---'
-
 \echo ' '
-
 \echo '+-----------------------+------------------------------------------------------------------+'
 \echo '| connection_stats      | Provides the count of active connections per user                |'
 \echo '| settings              | Lists the current database settings and their values             |'
 \echo '| extensions            | Shows installed extensions along with their versions             |'
 \echo '+-----------------------+------------------------------------------------------------------+'
-
 \echo ' '
+
