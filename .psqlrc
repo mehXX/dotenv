@@ -86,4 +86,4 @@
 \echo '| extensions            | Shows installed extensions along with their versions             |'
 \echo '+-----------------------+------------------------------------------------------------------+'
 
-
+\echo ' '
