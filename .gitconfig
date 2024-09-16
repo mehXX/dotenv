@@ -51,9 +51,6 @@
 [rerere]
 	enabled = true
 
-[core]
-  hooksPath = ~/.config/.git-templates/hooks
-
 [status]
     parallel = true
 
