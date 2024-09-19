@@ -9,13 +9,13 @@ export const NotesBackForth: KarabinerRules =
                 from: {
                     key_code: "open_bracket",
                     modifiers: {
-                        mandatory: ["left_option", "left_command"]
+                        mandatory: ["left_command"]
                     }
                 },
                 to: [
                     {
                         key_code: "open_bracket",
-                        modifiers: ["left_command"]
+                        modifiers: ["left_option", "left_command"]
                     },
                 ],
                 type: "basic",
