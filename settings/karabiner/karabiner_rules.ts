@@ -18,6 +18,7 @@ import {CopyCodeBlockChatGPTChrome} from "./rules/apps/chrome";
 import {CmdShiftVNoStyle} from "./rules/remap/semi_hyper_key_slash";
 import {CopyCodeBlockChatGPTOrion} from "./rules/apps/orion";
 import {FnToSemiModifier} from "./rules/remap/fn_to_brackets";
+import {NotesBackForth} from "./rules/apps/notes";
 
 const simple_modifications: SimpleKarabinerRules[] = [
     {
@@ -72,6 +73,7 @@ const rules: KarabinerRules[] = [
     // iTerm
     // Goland
     GolandChangeLanguage,
+    NotesBackForth,
     // Slack
     ...SlackRules,
     // Chrome
