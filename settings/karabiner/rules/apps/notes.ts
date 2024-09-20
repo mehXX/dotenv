@@ -100,5 +100,29 @@ export const NotesBackForth: KarabinerRules =
                     }
                 ]
             },
+            {
+                description: "search shortcut",
+                from: {
+                    key_code: "f",
+                    modifiers: {
+                        mandatory: ["left_command", "left_shift"]
+                    }
+                },
+                to: [
+                    {
+                        key_code: "f",
+                        modifiers: ["left_command", "left_option"]
+                    },
+                ],
+                type: "basic",
+                conditions: [
+                    {
+                        type: "frontmost_application_if",
+                        bundle_identifiers: [
+                            "^com.apple.Notes$"
+                        ]
+                    }
+                ]
+            },
         ]
     };
