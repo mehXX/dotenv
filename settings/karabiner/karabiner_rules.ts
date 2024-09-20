@@ -16,7 +16,6 @@ import {CopyCodeBlockChatGPTSafari} from "./rules/apps/safari";
 import {CapsBindings} from "./rules/variables/bindings/caps_bindings";
 import {CopyCodeBlockChatGPTChrome} from "./rules/apps/chrome";
 import {CmdShiftVNoStyle} from "./rules/remap/semi_hyper_key_slash";
-import {CopyCodeBlockChatGPTOrion} from "./rules/apps/orion";
 import {FnToSemiModifier} from "./rules/remap/fn_to_brackets";
 import {NotesBackForth} from "./rules/apps/notes";
 
@@ -62,7 +61,6 @@ const rules: KarabinerRules[] = [
     CommandsNumberToChangeChatsTelegram,
     // Safari
     CopyCodeBlockChatGPTSafari,
-    CopyCodeBlockChatGPTOrion,
     // Languages
     MapRightCmdOptionToChangeLanguage,
     // Spotify
