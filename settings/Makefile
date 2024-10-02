@@ -10,7 +10,7 @@ icloud_dotfiles:
 	./bin/icloud_dotfiles.sh
 
 karabiner:
-	./bin/karabiner.sh
+	./bin/sync_karabiner.sh
 
 is_up_to_date:
 	./bin/check_up_to_date.sh
