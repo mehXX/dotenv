@@ -24,7 +24,7 @@ setopt MULTIOS
 setopt NO_CASE_GLOB
 setopt CHASE_LINKS
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf sudo tmux)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf sudo)
 
 source $ZSH/oh-my-zsh.sh
 
