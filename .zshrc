@@ -137,9 +137,6 @@ get_secrets_stable() {
 }
 # START
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-#eval $(/opt/homebrew/bin/brew shellenv)
-#eval "$(pyenv init -)"
-
 eval "$(zoxide init zsh)"
 
 (nohup ~/settings/plist/bin/restic_backup_to_backblaze.sh >> /tmp/restic_backup.log 2>&1 &)
