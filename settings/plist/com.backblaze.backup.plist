@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.backblaze.backup.plist</string>
+    <string>com.backblaze.backup</string>
 
     <!-- Program and its arguments -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/ymka/settings/bin/restic_backup_to_backblaze.sh</string>
+        <string>~/settings/bin/restic_backup_to_backblaze.sh</string>
     </array>
 
     <!-- Run every hour -->

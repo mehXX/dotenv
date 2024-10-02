@@ -16,19 +16,12 @@ for plist_file in "$PLIST_SOURCE_DIR"/*.plist; do
     plist_name=$(basename "$plist_file")
     dest_plist="$DEST_DIR/$plist_name"
 
-    # Check if the plist already exists in the destination
-    if [ -f "$dest_plist" ]; then
-        echo "$plist_name already exists in $DEST_DIR. Overwriting..."
-
-        # Unload the existing plist (if it's loaded)
-        launchctl unload "$dest_plist"
-    fi
-
     # Copy the plist to the LaunchAgents folder (overwriting the existing one)
     echo "Copying $plist_name to $DEST_DIR..."
     cp "$plist_file" "$DEST_DIR/"
 
     # Load the new or updated plist file
+    launchctl unload "$dest_plist"
     launchctl load "$dest_plist"
 
     echo "$plist_name loaded and started."

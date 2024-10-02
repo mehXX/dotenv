@@ -8,9 +8,9 @@ fi
 
 touch "$LOCK_FILE"
 
-rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Settings proton:Settings
-rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents proton:Documents
-rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Health proton:Health
-rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Passwords proton:Passwords
+/opt/homebrew/bin/rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Settings proton:Settings
+/opt/homebrew/bin/rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents proton:Documents
+/opt/homebrew/bin/rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Health proton:Health
+/opt/homebrew/bin/rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Passwords proton:Passwords
 
 rm "$LOCK_FILE"

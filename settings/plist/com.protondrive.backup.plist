@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.backblaze.backup.plist</string>
+    <string>com.protondrive.backup</string>
 
     <!-- Program and its arguments -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/ymka/settings/bin/rsync_to_proton.sh</string>
+        <string>~/settings/bin/rsync_to_proton.sh</string>
     </array>
 
     <!-- Run every hour -->
