@@ -12,6 +12,7 @@ date
 
 if [[ "$USER" != "ymka" ]]; then
   echo "USER is not ymka"
+  rm "$LOCK_FILE"
   exit
 fi
 
