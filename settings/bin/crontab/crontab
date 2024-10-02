@@ -1,0 +1,7 @@
+0 * * * * ~/settings/bin/crontab/restic_backup_to_backblaze.sh >> /tmp/crontab.logs 2>&1
+
+https://alvinalexander.com/mac-os-x/mac-osx-startup-crontab-launchd-jobs/
+
+TODO
+ADD BACKUP TO CLOUDFLARE
+https://rclone.org/protondrive/
