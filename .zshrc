@@ -209,8 +209,7 @@ decrypt() {
 
 # START
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-eval "$(zoxide init zsh)"
 
-#(nohup ~/settings/plist/bin/restic_backup_to_backblaze.sh >> /tmp/restic_backup.log 2>&1 &)
+eval "$(zoxide init zsh)"
 
 ls
