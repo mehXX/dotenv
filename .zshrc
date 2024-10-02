@@ -135,6 +135,78 @@ get_secrets_stable() {
 
   printf "%s" "$JDBC_URL" | pbcopy
 }
+
+# Encrypt function
+encrypt() {
+  if [ -z "$1" ]; then
+    echo "Usage: encrypt <filename>"
+    return 1
+  fi
+
+  # File to be processed
+  local FILE="$1"
+
+  # Retrieve the password from macOS Keychain
+  local PASSWORD=$(security find-generic-password -s "encrypt-password" -a "ymka" -w)
+
+  # Check if the password was successfully retrieved
+  if [ -z "$PASSWORD" ]; then
+    echo "Failed to retrieve password from the keychain."
+    return 1
+  fi
+
+  # Encrypt the file
+  local output_file="${FILE}.enc"
+  openssl enc -aes-256-cbc -pbkdf2 -salt -in "$FILE" -out "$output_file" -k "$PASSWORD"
+
+  # Check if encryption was successful
+  if [ $? -eq 0 ]; then
+    echo "Encryption successful. Encrypted file created: $output_file"
+  else
+    echo "Encryption failed."
+    return 1
+  fi
+}
+
+# Decrypt function
+decrypt() {
+  if [ -z "$1" ]; then
+    echo "Usage: decrypt <filename.enc>"
+    return 1
+  fi
+
+  # File to be processed
+  local FILE="$1"
+
+  # Ensure the file ends with ".enc"
+  if [[ "$FILE" != *.enc ]]; then
+    echo "File must end with .enc to be decrypted."
+    return 1
+  fi
+
+  # Retrieve the password from macOS Keychain
+  local PASSWORD=$(security find-generic-password -s "encrypt-password" -a "ymka" -w)
+
+  # Check if the password was successfully retrieved
+  if [ -z "$PASSWORD" ]; then
+    echo "Failed to retrieve password from the keychain."
+    return 1
+  fi
+
+  # Decrypt the file
+  local output_file="${FILE%.enc}"
+  openssl enc -aes-256-cbc -pbkdf2 -d -in "$FILE" -out "$output_file" -k "$PASSWORD"
+
+  # Check if decryption was successful
+  if [ $? -eq 0 ]; then
+    echo "Decryption successful. Decrypted file created: $output_file"
+  else
+    echo "Decryption failed."
+    return 1
+  fi
+}
+
+
 # START
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 eval "$(zoxide init zsh)"
