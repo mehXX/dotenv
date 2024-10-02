@@ -50,7 +50,7 @@ export GOPRIVATE=git.uzum.io*
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export EDITOR=nvim
+export EDITOR=micro
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -143,6 +143,5 @@ get_secrets_stable() {
 eval "$(zoxide init zsh)"
 
 (nohup ~/settings/plist/bin/restic_backup_to_backblaze.sh >> /tmp/restic_backup.log 2>&1 &)
-#(~/settings/plist/bin/restic_backup_to_backblaze.sh > /dev/null 2>&1 &)
 
 ls

@@ -2,16 +2,11 @@
 
 LOCK_FILE="/tmp/restic_backup.lock"
 
-# Check if the lock file exists
 if [ -e "$LOCK_FILE" ]; then
-    # Lock file exists, exit silently
     exit 0
 fi
 
-# Create the lock file
 touch "$LOCK_FILE"
-
-#exec &>> /tmp/restic.log
 
 date
 
@@ -20,12 +15,10 @@ if [[ "$USER" != "ymka" ]]; then
   exit
 fi
 
-# Function to get the current time in nanoseconds
 get_current_time() {
     echo "$(/opt/homebrew/bin/gdate +%s%N)"
 }
 
-# Function to log the duration and completion of a task
 log_duration_and_complete() {
     local start_time=$1
     local task_name=$2
