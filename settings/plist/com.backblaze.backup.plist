@@ -8,7 +8,7 @@
     <!-- Program and its arguments -->
     <key>ProgramArguments</key>
     <array>
-        <string>~/settings/bin/restic_backup_to_backblaze.sh</string>
+        <string><HOME>/settings/bin/restic_backup_to_backblaze.sh</string>
     </array>
 
     <!-- Run every hour -->

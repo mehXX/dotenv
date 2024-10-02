@@ -8,7 +8,7 @@
     <!-- Program and its arguments -->
     <key>ProgramArguments</key>
     <array>
-        <string>~/settings/bin/rsync_to_proton.sh</string>
+        <string><HOME>/settings/bin/rsync_to_proton.sh</string>
     </array>
 
     <!-- Run every hour -->

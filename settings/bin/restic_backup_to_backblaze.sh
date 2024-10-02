@@ -8,6 +8,15 @@ fi
 
 touch "$LOCK_FILE"
 
+# Function to remove the lock file
+cleanup() {
+    rm -f "$LOCK_FILE"
+    echo "Lock file removed"
+}
+
+# Set the trap to remove the lock file on script exit (EXIT signal)
+trap cleanup EXIT
+
 date
 
 if [[ "$USER" != "ymka" ]]; then

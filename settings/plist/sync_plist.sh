@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLIST_SOURCE_DIR="/Users/ymka/settings/plist"  # Change this to your folder path
+PLIST_SOURCE_DIR="$HOME/settings/plist"  # Change this to your folder path
 
 # Destination directory for LaunchAgents
 DEST_DIR="$HOME/Library/LaunchAgents"
@@ -19,6 +19,8 @@ for plist_file in "$PLIST_SOURCE_DIR"/*.plist; do
     # Copy the plist to the LaunchAgents folder (overwriting the existing one)
     echo "Copying $plist_name to $DEST_DIR..."
     cp "$plist_file" "$DEST_DIR/"
+
+    sed -i '' "s|<HOME>|$HOME|g" "$dest_plist"
 
     # Load the new or updated plist file
     launchctl unload "$dest_plist"
