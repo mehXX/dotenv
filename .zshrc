@@ -50,7 +50,7 @@ export GOPRIVATE=git.uzum.io*
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export EDITOR=micro
+export EDITOR=nvim
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -81,10 +81,10 @@ alias grep="rg"
 alias cd="z"
 alias ctags="`brew --prefix`/bin/ctags"
 alias project="cd $(go list -m -e -json | jq -r .Dir)"
-alias psql="pgcli"
 alias rm="trash"
 alias bat="bat --paging=never"
 alias config='/usr/bin/git --git-dir=$HOME/.git_settings --work-tree=$HOME'
+# Force rebuild: The -B flag (also --always-make) tells make to unconditionally make all targets, regardless of whether they are up to date or not.
 alias make="make -B"
 
 function chpwd() {
@@ -128,13 +128,13 @@ get_secrets_stable() {
   USER=$(kubectl -n $NAMESPACE get secret $SECRET_PREFIX --template={{.data.username}} | base64 --decode)
 
   HOST="ufood-${SECRET_NAME}-psql-pooler.stable.svc.cluster.local"
+
   PORT="5432"
 
   JDBC_URL="jdbc:postgresql://${HOST}:${PORT}/${SERVICE_NAME}?user=${USER}&password=${PASSWORD}"
 
   printf "%s" "$JDBC_URL" | pbcopy
 }
-
 # START
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 #eval $(/opt/homebrew/bin/brew shellenv)
