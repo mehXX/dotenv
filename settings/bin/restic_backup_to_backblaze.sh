@@ -12,6 +12,7 @@ touch "$LOCK_FILE"
 cleanup() {
     rm -f "$LOCK_FILE"
     echo "Lock file removed"
+    echo "----------------------------------------------------------------------------------------------------"
 }
 
 # Set the trap to remove the lock file on script exit (EXIT signal)
@@ -51,6 +52,3 @@ export RESTIC_PASSWORD=$(security find-generic-password -a restic_backup -s rest
 /opt/homebrew/bin/restic backup "/Users/ymka/Library/Mobile Documents/com~apple~CloudDocs"
 log_duration_and_complete $start_time "backing up icloud"
 
-echo "----------------------------------------------------------------------------------------------------"
-
-rm "$LOCK_FILE"

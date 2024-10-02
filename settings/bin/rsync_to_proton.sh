@@ -12,6 +12,7 @@ touch "$LOCK_FILE"
 cleanup() {
     rm -f "$LOCK_FILE"
     echo "Lock file removed"
+    echo "----------------------------------------------------------------------------------------------------"
 }
 
 # Set the trap to remove the lock file on script exit (EXIT signal)
@@ -58,6 +59,3 @@ echo "START: syncing Passwords"
 /opt/homebrew/bin/rclone sync ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Passwords proton:Passwords
 log_duration_and_complete $start_time "syncing Passwords"
 
-echo "----------------------------------------------------------------------------------------------------"
-
-rm "$LOCK_FILE"
