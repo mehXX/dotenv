@@ -1,6 +1,17 @@
 #!/bin/bash
 
-exec &>> /tmp/restic.log
+LOCK_FILE="/tmp/restic_backup.lock"
+
+# Check if the lock file exists
+if [ -e "$LOCK_FILE" ]; then
+    # Lock file exists, exit silently
+    exit 0
+fi
+
+# Create the lock file
+touch "$LOCK_FILE"
+
+#exec &>> /tmp/restic.log
 
 date
 
@@ -38,3 +49,5 @@ export RESTIC_PASSWORD=$(security find-generic-password -a restic_backup -s rest
 log_duration_and_complete $start_time "backing up icloud"
 
 echo "----------------------------------------------------------------------------------------------------"
+
+rm "$LOCK_FILE"

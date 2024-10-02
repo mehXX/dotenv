@@ -142,5 +142,7 @@ get_secrets_stable() {
 
 eval "$(zoxide init zsh)"
 
+(nohup ~/settings/plist/bin/restic_backup_to_backblaze.sh >> /tmp/restic_backup.log 2>&1 &)
+#(~/settings/plist/bin/restic_backup_to_backblaze.sh > /dev/null 2>&1 &)
 
 ls
