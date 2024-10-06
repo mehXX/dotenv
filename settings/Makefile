@@ -1,6 +1,6 @@
 .PHONY: icloud restic sync
 
-sync: is_up_to_date karabiner sync_config icloud_dotfiles
+sync: karabiner sync_config icloud_dotfiles
 karabiner_config: karabiner sync_config
 
 sync_config:
