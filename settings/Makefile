@@ -1,6 +1,6 @@
 .PHONY: icloud restic sync
 
-sync: karabiner sync_config icloud_dotfiles
+sync: karabiner sync_config
 karabiner_config: karabiner sync_config
 
 sync_config:
