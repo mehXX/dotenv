@@ -206,6 +206,27 @@ export const SlackChats: KarabinerRules =
                 to: [],
                 type: "basic"
             },
+            {
+                description: "raycast",
+                conditions: [
+                    {
+                        bundle_identifiers: [
+                            "^com.valvesoftware.dota2$"
+                        ],
+                        type: "frontmost_application_if"
+                    }
+                ],
+                from: {
+                    key_code: "q",
+                    modifiers: {
+                        "mandatory": [
+                            "left_command"
+                        ],
+                    }
+                },
+                to: [],
+                type: "basic"
+            },
         ]
     }
 
