@@ -11,6 +11,7 @@ export REPORTTIME=1
 export UPDATE_ZSH_DAYS=30
 
 setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -213,3 +214,6 @@ decrypt() {
 eval "$(zoxide init zsh)"
 
 ls
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/n.naumov/.cache/lm-studio/bin"

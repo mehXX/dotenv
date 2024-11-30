@@ -53,30 +53,6 @@ export const NotesBackForth: KarabinerRules =
                 ]
             },
             {
-                description: "open quick notes",
-                from: {
-                    key_code: "1",
-                    modifiers: {
-                        mandatory: ["left_command"]
-                    }
-                },
-                to: [
-                    {
-                        key_code: "q",
-                        modifiers: ["left_option", "left_command", "left_shift"]
-                    },
-                ],
-                type: "basic",
-                conditions: [
-                    {
-                        type: "frontmost_application_if",
-                        bundle_identifiers: [
-                            "^com.apple.Notes$"
-                        ]
-                    }
-                ]
-            },
-            {
                 description: "replace shortcut",
                 from: {
                     key_code: "r",
